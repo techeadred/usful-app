@@ -1,10 +1,15 @@
-import React from 'react';
-import { Route, Link } from 'react-router-dom';
-import NavBar from './../NavBar/NavBar'
-import News from './../News/News';
-import Resources from './Resources/Resources';
-import Statistics from './Statistics/Statistics';
-import SymptonsBestPractices from './SymptonsBestPractices/SymptonsBestPractices';
+import React from 'react'
+import { Route } from 'react-router-dom'
+import UsfulContext from './UsfulContext'
+import NavBar from './NavBar/NavBar'
+import News from './News/News'
+import Resources from './Resources/Resources'
+import Statistics from './Statistics/Statistics'
+import Symptoms from './Symptoms/Symptoms'
+import BestPractices from './BestPractices/BestPractices'
+import SignIn from './SignIn/SignIn'
+import SignUp from './SignUp/SignUp'
+import GettingStarted from './GettingStarted/GettingStarted'
 
 class App extends React.Component {
   state = {
@@ -19,10 +24,14 @@ class App extends React.Component {
   renderMainRoutes() {
     return (
       <>
-        <Route path="/resources" component={Resources}/>
-        <Route path="/statistics" component={Statistics}/>
-        <Route exact path="symptons-and-best-practices" component={SymptonsBestPractices}/>
-        <Route exact path="/news" component={News}/>
+        <Route exact path="/" component={GettingStarted} />
+        <Route exact path="/resources" component={Resources} />
+        <Route exact path="/statistics" component={Statistics} />
+        <Route exact path="/symptoms" component={Symptoms} />
+        <Route exact path="/best-practices" component={BestPractices} />
+        <Route exact path="/news" component={News} />
+        <Route exact path="/sign-up" component={SignUp} />
+        <Route exact path="/sign-in" component={SignIn} />
       </>
     )
   }
@@ -33,10 +42,9 @@ class App extends React.Component {
     return (
       <main className='App'>
         <NavBar />
-        <h1>Home/Demo Page</h1>
-        <span>Offer of a demo and then starting point of site if declined</span>
-        <button type="Get Started">Learn More</button>
-      </main>
+          <main className="App__main">
+            {this.renderMainRoutes()}
+          </main>
     );
   }
 }
