@@ -1,33 +1,27 @@
-import React from 'react';
-import NavBar from './../NavBar/NavBar';
+import React from 'react'
+import StateStats from './../StateStats/StateStats';
+import CountryStats from './../CountryStats/CountryStats'
 
 class Statistics extends React.Component {
+    static defaultProps = {
+        match: {
+            params: {}
+        }
+    }
+
     render() {
         return (
-            <section class="main stats" id="stats">
-                <NavBar />
+            <section className="main stats" id="stats">
                 <h1>Statistics</h1>
-                <ul>
-                    <li>
-                        <label>Global</label>
-                    </li>
-                    <li>
-                        <label for="countries">Country</label>
-                        <select name="countries" id="countries">
-                            <option value="afghanistan">Afghanistan</option>
-                            <option value="albania">Albania</option>
-                            <option value="algeria">Algeria</option>
-                            <option>...</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="states">State</label>
-                        <select name="states" id="states">
-                            <option value="alabama">Alabama</option>
-                            <option value="alaska">Alaska</option>
-                        </select>
-                    </li>
-                </ul>
+                <div className="stats-all-container">
+                    <label>Global</label>
+                    <CountryStats />
+                    <StateStats />
+                </div>
+                <div>
+                    <p>Confirmed Cases: Statistics Not Available</p>
+                    <p>Recovered: Statistics Not Available</p>
+                </div>
             </section>
         )
     }
