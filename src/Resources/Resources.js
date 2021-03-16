@@ -1,18 +1,20 @@
 import React from 'react';
-import NavBar from './../NavBar/NavBar';
+import { resourceAll } from '../Store';
 
 class Resources extends React.Component {
     render() {
+        const resAll = resourceAll()
+
         return (
-            <section class="main resources" id="resources">
-                <NavBar />
+            <section className="main resources" id="resources">
                 <h1>Resources</h1>
-                <ul>
-                    <li>CDC</li>
-                    <li>European CDC</li>
-                    <li>WHO</li>
-                    <li>Self Assesment Exam</li>
-                </ul>
+                <div className="generated-list">
+                    {resAll.map(ra =>
+                        <div key={ra.id}>
+                            {ra.name}
+                        </div>
+                    )}
+                </div>
             </section>
         )
     }
