@@ -10,7 +10,7 @@ class GettingStarted extends React.Component {
                     information. The information hereon provided is meant as a resource and should not be treated as a
                     substitute for personal medical attention, diagnosis, or hands-on treatment.
                 </h2>
-                <h4>If this is your first time visiting, and want to learn more about the site, click the button below. (Button is not working at this time)</h4>
+                <h4>If this is your first time visiting, and want to learn more about the site, click the button below. <br />(Button is not working at this time)</h4>
                 <button>Learn More</button>
             </section>
         )
