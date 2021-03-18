@@ -14,29 +14,12 @@ import GettingStarted from './GettingStarted/GettingStarted'
 class App extends React.Component {
   state = {
     articles: [],
-    statistics: []
+    stats: {
+      countries: [],
+      global: []
+    },
+    store: []
   };
-  
-  // componentDidMount() {
-
-  // }
-
-  // renderMainRoutes() {
-  //   return (
-  //     <>
-  //       <Route exact path="/" component={GettingStarted} />
-  //       <Route exact path="/resources" component={Resources} />
-  //       <Route exact path="/statistics" component={Statistics} />
-  //       <Route exact path="/symptoms" component={Symptoms} />
-  //       <Route exact path="/best-practices" component={BestPractices} />
-  //       <Route exact path="/news" component={News} />
-  //       <Route exact path="/sign-up" component={SignUp} />
-  //       <Route exact path="/sign-in" component={SignIn} />
-  //     </>
-  //   )
-  // }
-
-
 
   render() {
     const value = {
@@ -58,19 +41,9 @@ class App extends React.Component {
             <Route exact path="/news" component={News} />
             <Route exact path="/sign-up" component={SignUp} />
             <Route exact path="/sign-in" component={SignIn} />
-      </>
-    )
-  }
-
-
-
-  render() {
-    return (
-      <main className='App'>
-        <NavBar />
-          <main className="App__main">
-            {this.renderMainRoutes()}
           </main>
+        </div>
+      </UsfulContext.Provider>
     );
   }
 }
